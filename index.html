@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GREENZONE - Gaming Center Berd | Լավագույն ժամանցի վայրը Բերդում</title>
+    <meta name="description" content="GREENZONE Gaming Center Berd - Ժամանցի կենտրոն Բերդ քաղաքում։ PS4, Համակարգիչներ, VIP սենյակ, Կալյան և Ղեկ Simulator։ Ամրագրեք հիմա լավագույն խաղային փորձի համար։">
+    <meta name="keywords" content="Greenzone Berd, Գրինզոն Բերդ, Բերդի համակարգչային ակումբ, PS4 Բերդ, Կալյան Բերդում, Ժամանց Բերդ, FIFA 2026, Տավուշի խաղային ակումբներ">
+    <meta name="author" content="Greenzone Admin">
+    
+    <meta property="og:title" content="GREENZONE - Gaming Center Berd">
+    <meta property="og:description" content="Որտեղ խաղը դառնում է իրականություն։ Բերդի լավագույն gaming մթնոլորտը։">
+    <meta property="og:url" content="https://greenzone-berd.com">
+    <meta property="og:type" content="website">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --main-green: #2ecc71;
+            --rgb-speed: 3s;
+        }
+
+        @keyframes rgb-glow {
+            0% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; }
+            33% { border-color: #00ff00; box-shadow: 0 0 10px #00ff00; }
+            66% { border-color: #0000ff; box-shadow: 0 0 10px #0000ff; }
+            100% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; }
+        }
+
+        body { 
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff; 
+            font-family: 'Segoe UI', sans-serif; 
+            line-height: 1.6;
+        }
+        
+        .green { color: var(--main-green); }
+        header { background: rgba(0, 0, 0, 0.95); padding: 20px 5%; border-bottom: 2px solid var(--main-green); text-align: center; }
+
+        .hero-section { padding: 60px 5%; text-align: center; }
+        .main-title { 
+            font-size: clamp(40px, 10vw, 80px); 
+            color: var(--main-green); 
+            text-shadow: 0 0 30px rgba(46, 204, 113, 0.5);
+            border: 2px solid transparent;
+            display: inline-block;
+            padding: 10px 25px;
+            animation: rgb-glow var(--rgb-speed) infinite linear;
+            border-radius: 10px;
+        }
+
+        .slogan {
+            font-size: 22px;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .sidebar-menu {
+            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 12px; z-index: 1000;
+        }
+        .tool-btn {
+            background: rgba(17, 17, 17, 0.9); border: 1px solid var(--main-green);
+            color: #fff; padding: 15px; border-radius: 12px; cursor: pointer;
+            font-weight: bold; transition: 0.3s; text-align: center; min-width: 150px;
+            text-decoration: none; font-size: 14px; backdrop-filter: blur(5px);
+        }
+        .tool-btn:hover { background: var(--main-green); color: #000; box-shadow: 0 0 20px var(--main-green); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 5%; }
+        .card { 
+            background: rgba(20, 20, 20, 0.85); 
+            padding: 25px; border-radius: 15px; border: 2px solid #333; 
+            animation: rgb-glow 6s infinite linear;
+        }
+        .price-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 17px; }
+
+        /* ABOUT SECTION FOR GOOGLE */
+        .about-section {
+            padding: 60px 5%;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+        .about-container { max-width: 800px; margin: 0 auto; }
+
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 4000; justify-content: center; align-items: center;
+        }
+        .modal-content {
+            background: #111; padding: 30px; border-radius: 20px; border: 2px solid var(--main-green);
+            width: 90%; max-width: 450px; text-align: center; position: relative;
+        }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 30px; color: #666; cursor: pointer; }
+        
+        input, select {
+            width: 100%; padding: 12px; margin-top: 10px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 8px;
+        }
+
+        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar-menu">
+        <div class="tool-btn" onclick="openModal('bookModal')" style="background: var(--main-green); color: #000; border: none;">🔥 ԱՄՐԱԳՐԵԼ</div>
+        <div class="tool-btn" onclick="openModal('calcModal')">🧮 Հաշվիչ</div>
+        <div class="tool-btn" onclick="openModal('randModal')" style="border-color: #3498db;">⚽ Randomizer</div>
+        <a href="https://www.instagram.com/greenzone_berd" target="_blank" class="tool-btn" style="border-color: #E1306C;">📸 Instagram</a>
+    </div>
+
+    <header>
+        <div style="font-size: 24px; font-weight: 900;">GREEN<span class="green">ZONE</span></div>
+    </header>
+
+    <section class="hero-section">
+        <h1 class="main-title">GREENZONE</h1>
+        <div class="slogan">Որտեղ խաղը դառնում է իրականություն</div>
+        <p style="letter-spacing: 5px; color: #888; margin-top: 15px;">BERD GAMING CENTER</p>
+    </section>
+
+    <div class="grid">
+        <div class="card" style="border-color: #f1c40f; animation: none;">
+            <h3 style="color: #f1c40f; text-align: center;">💎 VIP ՍԵՆՅԱԿ</h3>
+            <div class="price-row"><span>PS4 (1 ժամ)</span> <span>1500֏</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="green" style="text-align: center;">ՏԵԽՆԻԿԱ</h3>
+            <div class="price-row"><span>Համակարգիչ (1 ժ)</span> <span>700֏</span></div>
+            <div class="price-row"><span>Համակարգիչ (3 ժ)</span> <span class="green">1800֏</span></div>
+            <div class="price-row"><span>PS4 (1 ժ)</span> <span>800֏</span></div>
+            <div class="price-row"><span>PS4 (3 ժ)</span> <span class="green">2000֏</span></div>
+            <div class="price-row"><span>Ղեկ Simulator (1 ժ)</span> <span>1000֏</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="green" style="text-align: center;">ԿԱԼՅԱՆ</h3>
+            <div class="price-row"><span>Փոքր (1 ժ)</span> <span>3000֏</span></div>
+            <div class="price-row"><span>Մեծ (1 ժ)</span> <span>4000֏</span></div>
+            <div class="price-row"><span>Փոքր (3 ժ)</span> <span class="green">7000֏</span></div>
+            <div class="price-row"><span>Մեծ (3 ժ)</span> <span class="green">10000֏</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="green" style="text-align: center;">ՓԱԹԵԹՆԵՐ</h3>
+            <div class="price-row"><strong>1-ՕՐՅԱ ՓԱԹԵԹ</strong> <span class="green">50,000֏</span></div>
+            <div class="price-row"><strong>2ժ Փաթեթ</strong> <span class="green">10,000֏</span></div>
+            <div class="price-row"><strong>5ժ Փաթեթ</strong> <span class="green">36,000֏</span></div>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <div class="about-container">
+            <h2 class="green" style="margin-bottom: 20px;">ԻՆՉՈՒ՞ ԸՆՏՐԵԼ GREENZONE-Ը</h2>
+            <p style="color: #bbb; font-size: 18px;">
+                <strong class="green">GREENZONE-ը</strong> Բերդ քաղաքի ամենաժամանակակից <strong style="color: #fff;">gaming center</strong>-ն է։ Մենք առաջարկում ենք բարձրակարգ համակարգիչներ, PS4-ի մեծ տեսականի, VIP սենյակներ և հանգստի գոտի՝ կալյանի սիրահարների համար։ Եթե փնտրում եք <strong style="color: #fff;">լավագույն ժամանցը Բերդում</strong>, ապա Գրինզոնը ձեր միակ կանգառն է։
+            </p>
+        </div>
+    </section>
+
+    <div id="calcModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('calcModal')">&times;</span>
+            <h2 class="green">ՀԱՇՎԻՉ</h2>
+            <input type="number" id="calc-pc" placeholder="PC (ժամ)" oninput="doMath()">
+            <input type="number" id="calc-ps" placeholder="PS4 (ժամ)" oninput="doMath()">
+            <input type="number" id="calc-vip" placeholder="VIP (ժամ)" oninput="doMath()">
+            <input type="number" id="calc-wheel" placeholder="Ղեկ (ժամ)" oninput="doMath()">
+            <input type="number" id="calc-k-small" placeholder="Կալյան Փոքր (ժամ)" oninput="doMath()">
+            <input type="number" id="calc-k-large" placeholder="Կալյան Մեծ (ժամ)" oninput="doMath()">
+            <div style="background: #000; padding: 15px; border-radius: 10px; margin-top: 20px; border: 1px solid #333;">
+                <div style="font-size: 28px; font-weight: bold; color: var(--main-green);"><span id="final-sum">0</span> ֏</div>
+            </div>
+            <button onclick="resetCalc()" style="color:#555; background:none; border:none; cursor:pointer; margin-top:10px; text-decoration:underline;">Մաքրել</button>
+        </div>
+    </div>
+
+    <div id="randModal" class="modal">
+        <div class="modal-content" style="border-color: #3498db;">
+            <span class="close-btn" onclick="closeModal('randModal')">&times;</span>
+            <h2 style="color: #3498db;">FC RANDOMIZER</h2>
+            <div id="match-type" style="font-size: 12px; color: #3498db; margin-top: 10px; font-weight: bold;"></div>
+            <div style="display: flex; justify-content: space-around; align-items: center; margin: 25px 0;">
+                <div style="flex: 1;">
+                    <p style="font-size: 11px; color: #888;">PLAYER 1</p>
+                    <div id="team1" style="font-size: 18px; font-weight: bold; color: #fff; margin-top: 5px;">???</div>
+                </div>
+                <div style="color: #3498db; font-size: 22px; font-weight: 900; padding: 0 10px;">VS</div>
+                <div style="flex: 1;">
+                    <p style="font-size: 11px; color: #888;">PLAYER 2</p>
+                    <div id="team2" style="font-size: 18px; font-weight: bold; color: #fff; margin-top: 5px;">???</div>
+                </div>
+            </div>
+            <button onclick="pickMatch()" class="tool-btn" style="width:100%; border-color:#3498db; background: rgba(52, 152, 219, 0.1);">ԳԵՆԵՐԱՑՆԵԼ</button>
+        </div>
+    </div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('bookModal')">&times;</span>
+            <h2 class="green">ԱՄՐԱԳՐՈՒՄ</h2>
+            <select id="bookType">
+                <option value="Համակարգիչ">Համակարգիչ</option>
+                <option value="PS4">PS4</option>
+                <option value="VIP Սենյակ">VIP Սենյակ</option>
+                <option value="Ղեկ Simulator">Ղեկ Simulator</option>
+            </select>
+            <input type="time" id="bookTime">
+            <button onclick="sendBooking()" class="tool-btn" style="width:100%; background: #25D366; border:none; margin-top:20px; color:#fff;">📩 WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>📍 ք. Բերդ, Ճոպանուղի սուպերմարկետ, -1 հարկ</p>
+        <p style="margin-top: 10px; font-size: 12px;">© 2026 GREENZONE Gaming Center. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+        function doMath() {
+            const pc = parseFloat(document.getElementById('calc-pc').value) || 0;
+            const ps = parseFloat(document.getElementById('calc-ps').value) || 0;
+            const vip = parseFloat(document.getElementById('calc-vip').value) || 0;
+            const wheel = parseFloat(document.getElementById('calc-wheel').value) || 0;
+            const ks = parseFloat(document.getElementById('calc-k-small').value) || 0;
+            const kl = parseFloat(document.getElementById('calc-k-large').value) || 0;
+
+            let pcT = Math.floor(pc/3)*1800 + (pc%3)*700;
+            let psT = Math.floor(ps/3)*2000 + (ps%3)*800;
+            let ksT = Math.floor(ks/3)*7000 + (ks%3)*3000;
+            let klT = Math.floor(kl/3)*10000 + (kl%3)*4000;
+
+            let total = pcT + psT + (vip * 1500) + (wheel * 1000) + ksT + klT;
+            document.getElementById('final-sum').innerText = total.toLocaleString();
+        }
+
+        function resetCalc() {
+            ['calc-pc','calc-ps','calc-vip','calc-wheel','calc-k-small','calc-k-large'].forEach(id => document.getElementById(id).value = '');
+            doMath();
+        }
+
+        function pickMatch() {
+            const clubs = ["Real Madrid", "Man City", "FC Barcelona", "Bayern Munich", "Liverpool", "Arsenal", "PSG", "Inter Milan", "Bayer Leverkusen", "AC Milan", "Juventus", "Atletico Madrid", "Dortmund", "Chelsea", "Napoli"];
+            const nations = ["Argentina", "France", "Portugal", "Brazil", "Spain", "England", "Italy", "Germany", "Netherlands", "Uruguay", "Morocco", "Croatia"];
+            
+            const useClubs = Math.random() > 0.5;
+            const list = useClubs ? clubs : nations;
+            document.getElementById('match-type').innerText = useClubs ? "ԱԿՈՒՄԲՆԵՐ" : "ՀԱՎԱՔԱԿԱՆՆԵՐ";
+
+            let t1 = list[Math.floor(Math.random() * list.length)];
+            let t2;
+            do { t2 = list[Math.floor(Math.random() * list.length)]; } while (t1 === t2);
+            
+            document.getElementById('team1').innerText = t1;
+            document.getElementById('team2').innerText = t2;
+        }
+
+        function sendBooking() {
+            const type = document.getElementById('bookType').value;
+            const time = document.getElementById('bookTime').value;
+            if(!time) return alert("Նշեք ժամը");
+            window.open(`https://wa.me/37441250429?text=Ամրագրում: ${type}, Ժամը: ${time}`, '_blank');
+        }
+
+        window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display = 'none'; }
+    </script>
+</body>
+</html>
